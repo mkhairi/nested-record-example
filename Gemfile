@@ -59,3 +59,5 @@ gem 'nested_record'
 gem 'show_for'
 gem 'simple_form'
 gem 'slim-rails'
+
+gem "responders", "~> 3.0"
