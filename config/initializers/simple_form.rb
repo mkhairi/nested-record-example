@@ -158,7 +158,7 @@ SimpleForm.setup do |config|
   # config.cache_discovery = !Rails.env.development?
 
   # Default class for inputs
-  # config.input_class = nil
+  config.input_class = 'col-12'
 
   # Define the default class of the input wrapper of the boolean input.
   config.boolean_label_class = 'checkbox'

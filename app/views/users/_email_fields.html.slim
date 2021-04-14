@@ -1,0 +1,19 @@
+tr.nested-fields
+  td
+    = f.input :email,
+      label: false,
+      placeholder: 'Email',
+      wrapper_html: { class: 'col p-0 m-0' }
+  td
+    = f.input :primary,
+      label: false,
+      as: :boolean,
+      wrapper_html: { class: 'col p-0 m-0' }
+  td
+    = f.input :_destroy, as: :hidden,
+      wrapper_html: { class: 'col p-0 m-0' }
+    .text-right.pl-0
+      a.btn.btn-outline-danger.ml-auto.px-2.ml-0(
+        data-action='nested-form#removeAssociation'
+        href='#'
+      ) +

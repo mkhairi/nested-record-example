@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  pin: 1
+  profile: 
+
+two:
+  username: MyString
+  pin: 1
+  profile: 

@@ -1,0 +1,21 @@
+= show_for(@user) do |s|
+  = s.attribute :username
+  = s.attribute :pin
+hr
+h5.text-center Profile
+= show_for(@user.profile) do |s|
+  = s.attribute :fullname
+  = s.attribute :age
+  = s.attribute :active
+hr
+h5.text-center emails
+- @user.emails.each do |e|
+  = e.email
+  = e.primary
+  = e.confirmed_at
+  br
+
+br
+= link_to 'Edit', edit_user_path(@user), class: 'btn btn-link btn-info'
+
+= link_to 'Back', users_path, class: 'btn btn-link btn-light'

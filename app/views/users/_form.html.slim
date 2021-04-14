@@ -1,0 +1,22 @@
+= simple_form_for(@user) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    .row
+      = f.input :username, wrapper_html: { class: 'col-md-6' }
+      = f.input :pin, wrapper_html: { class: 'col-md-6' }
+
+    hr/
+    code has_one_nested :profile
+    .row
+      = f.simple_fields_for :profile do |p|
+        = p.input :fullname, wrapper_html: { class: 'col-md-4' }
+        = p.input :age, wrapper_html: { class: 'col-md-4' }
+        = p.input :active, as: :select, collection: ['Yes', 'No'], include_blank: false, wrapper_html: { class: 'col-md-4' }
+    hr
+    code has_many_nested :emails
+    = render 'emails', f: f
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-primary'

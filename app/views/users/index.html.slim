@@ -1,0 +1,27 @@
+h1 Listing users
+
+table.table.table-stripped
+  thead
+    tr
+      th Username
+      th Pin
+      th Emails
+      th Profile
+      th
+      th
+      th
+
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.username
+        td = user.pin
+        td = user.emails.inspect
+        td = user.profile.inspect
+        td = link_to 'Show', user
+        td = link_to 'Edit', edit_user_path(user)
+        td = link_to 'Destroy', user, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New User', new_user_path, class: 'btn btn-primary'

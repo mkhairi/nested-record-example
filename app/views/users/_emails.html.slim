@@ -1,0 +1,26 @@
+.row data-controller='nested-form'
+  template data-target='nested-form.template'
+    table
+      tbody
+        = f.simple_fields_for :emails,
+          Email.new,
+          child_index: 'TEMPLATE_RECORD' do |t|
+          = render 'email_fields', f: t
+
+  .col-12
+    table.table.table-bordered.table-sm
+      thead
+        tr
+          th Email
+          th Primary
+          th width='10px'
+      tbody
+        = f.simple_fields_for :emails do |t|
+          = render 'email_fields', f: t
+        tr data-target='nested-form.add_item'
+          td colspan='2'
+          td
+            a.btn.btn-outline-primary.ml-auto.px-2.btn-add-custom-field(
+              data-action='nested-form#addAssociation'
+              href="#"
+            ) +
