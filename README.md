@@ -1,4 +1,8 @@
-# README
+# README 
+
+https://nested-record-example.herokuapp.com/
+
+https://github.com/marshall-lee/nested_record
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
