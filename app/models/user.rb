@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_one_nested :profile
+  has_one_nested :profile, attributes_writer: { strategy: :rewrite }
   has_many_nested :emails,
                   attributes_writer: {
                     strategy: :rewrite,
